@@ -6,7 +6,7 @@ O pipeline segue a arquitetura Medalhão, transformando os dados através das se
 * **Landing**: Onde os dados brutos são recebidos.
 * **Bronze**: Ingestão dos dados brutos em um formato mais estruturado.
 * **Silver**: Aplicação de regras de limpeza, padronização e enriquecimento.
-* **Data Quality Gate**: Uma tarefa customizada que executa testes de qualidade de dados na camada Silver. Se os testes falharem, o pipeline é interrompido.
+* **Data Quality**: Uma tarefa customizada que executa testes de qualidade de dados na camada Silver. Se os testes falharem, o pipeline é interrompido.
 * **Gold**: Criação de tabelas agregadas e prontas para consumo por dashboards ou análises de negócio.
 
 ## Arquitetura e Tecnologias
@@ -14,7 +14,7 @@ O pipeline segue a arquitetura Medalhão, transformando os dados através das se
 * **Orquestração**: Apache Airflow
 * **Containerização**: Docker
 * **Processamento de Dados**: DuckDB
-* **Qualidade de Dados**: Customizado com Python e executado como uma tarefa do Airflow.
+* **Qualidade de Dados**: Processo customizado para analise de qualidade dos dados, feito com Python/DuckDB.
 
 ## Estrutura do Projeto
 
@@ -73,6 +73,7 @@ Para evitar problemas de permissão de arquivos entre seu computador e os contê
     ```powershell
     echo "AIRFLOW_UID=50000" > .env
     ```
+* Neste projeto deixarei disponível o .env base.
 
 ### 3. Construa a Imagem e Inicie os Contêineres
 
@@ -96,7 +97,7 @@ Este processo irá construir sua imagem customizada do Airflow (com DuckDB insta
 
 ### 5. Execute a DAG
 
-Na interface do Airflow, procure pela DAG chamada `fraud_credit_pipeline`. Ative-a no botão de toggle e clique no botão "Play" (▶️) para iniciar uma execução manual.
+Na interface do Airflow, procure pela DAG chamada `fraud_credit_pipeline`. Ative-a no botão de toggle e clique no botão Trigger para iniciar uma execução manual.
 
 ## Detalhes do Pipeline
 

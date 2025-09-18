@@ -52,7 +52,6 @@ with DAG(
         python_callable=SilverTask(db_path=DB_PATH, output_parquet_path=SILVER_PARQUET_PATH).execute
     )
 
-
     dq_silver = PythonOperator(
             task_id='dq_silver',
             python_callable=DataQualityTask(
@@ -60,7 +59,6 @@ with DAG(
             table_name='silver_transactions'
             ).execute
         )
-
 
     gold_avg_risk = PythonOperator(
         task_id='gold_avg_risk',

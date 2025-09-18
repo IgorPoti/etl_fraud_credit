@@ -56,7 +56,7 @@ class DataQualityTask:
         ]
 
     def execute(self):
-        self.log.info(f"DATA QUALITY: Iniciando validações manuais para a tabela '{self.table_name}'...")
+        self.log.info(f"DATA QUALITY: Iniciando validações para a tabela '{self.table_name}'...")
         failed_checks = []
         
         with duckdb.connect(database=self.db_path, read_only=True) as con:
