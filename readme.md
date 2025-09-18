@@ -115,7 +115,3 @@ Para parar todos os contêineres do Airflow, execute:
 ```bash
 docker-compose down
 ```
-Se você também quiser remover os volumes persistentes (como o banco de dados do PostgreSQL do Airflow, **não** seus arquivos em `.storage`), use:
-```bash
-docker-compose down --volumes
-```
