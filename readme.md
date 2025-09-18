@@ -1,5 +1,3 @@
-# Pipeline de Dados de Fraude com Airflow e DuckDB
-
 ## Visão Geral
 
 Este projeto implementa um pipeline de dados ponta a ponta para processar transações de fraude de crédito. A solução é orquestrada pelo Apache Airflow, totalmente containerizada com Docker, e utiliza o DuckDB como motor de processamento analítico.
